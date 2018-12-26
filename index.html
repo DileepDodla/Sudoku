@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sudoku</title>
+        <style>
+            #SudoGrid {
+                width: 378px;
+                height: 395px;
+                margin:1em auto;
+                margin-left: 20px;
+                margin-top: 50px;
+            }
+            .cell input{
+                display: inline-block;
+                float: left;
+                border: 0px solid;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                font-size: 30px; 
+            }
+            .cell input:focus{
+                outline: 3px solid blue;
+            }
+            .box-hl{
+                /*background-color:rgb(9, 196, 243);*/
+                background-color:rgb(177, 176, 176);
+            }
+            .box-hl-light{
+                /*background-color: rgb(142, 210, 255);*/
+                background-color:white;
+            }
+            td {
+                height:30px;
+                width:30px;
+                border:0px solid grey;
+                text-align:center;
+            }
+            td:first-child {
+                border-left:solid;
+            }
+            td:nth-child(3n) {
+                border-right:solid ;
+            }
+            tr:first-child {
+                border-top:solid;
+            }
+            tr:nth-child(3n) td {
+                border-bottom:solid;
+            }
+            tr.noborder td{
+                border: 1px solid rgb(73, 73, 73);
+            }
+        </style>
+    </head>
+    <body style="background-color:rgb(73, 73, 73)">
+            <table id="SudoGrid" border="1" style="border-collapse:collapse">
+                <tr class="row">
+                    <td class="cell"><input class="box-hl-light" id="11" type="text" maxlength="1"></td>
+                    <td class="cell"><input class="box-hl-light" id="12" type="text" maxlength="1"></td>
+                    <td class="cell"><input class="box-hl-light" id="13"  type="text" maxlength="1"></td>
+                    <td class="cell"><input class="box-hl" id="14" type="text" maxlength="1"></td>
+                    <td class="cell"><input class="box-hl" id="15" type="text" maxlength="1"></td>
+                    <td class="cell"><input class="box-hl" id="16" type="text" maxlength="1"></td>
+                    <td class="cell"><input class="box-hl-light" id="17" type="text" maxlength="1"></td>
+                    <td class="cell"><input class="box-hl-light" id="18" type="text" maxlength="1"></td>
+                    <td class="cell"><input class="box-hl-light" id="19" type="text" maxlength="1"></td>
+                </tr>
+                <tr class="row">
+                        <td class="cell"><input class="box-hl-light" id="21" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="22" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="23" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="24" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="25" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="26" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="27" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="28" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="29" type="text" maxlength="1"></td>
+                </tr>
+                <tr class="row">
+                        <td class="cell"><input class="box-hl-light" id="31" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="32" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="33" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="34" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="35" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="36" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="37" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="38" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="39" type="text" maxlength="1"></td>
+                </tr>
+                <tr class="row">
+                        <td class="cell"><input class="box-hl" id="41" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="42" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="43" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="44" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="45" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="46" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="47" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="48" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="49" type="text" maxlength="1"></td>
+                </tr>
+                <tr class="row">
+                        <td class="cell"><input class="box-hl" id="51" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="52" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="53" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="54" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="55" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="56" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="57" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="58" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="59" type="text" maxlength="1"></td>
+                </tr>
+                <tr class="row">
+                        <td class="cell"><input class="box-hl" id="61" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="62" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="63" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="64" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="65" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="66" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="67" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="68" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="69" type="text" maxlength="1"></td>
+                </tr>
+                <tr class="row">
+                        <td class="cell"><input class="box-hl-light" id="71" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="72" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="73" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="74" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="75" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="76" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="77" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="78" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="79" type="text" maxlength="1"></td>
+                </tr>
+                <tr class="row">
+                        <td class="cell"><input class="box-hl-light" id="81" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="82" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="83" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="84" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="85" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="86" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="87" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="88" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="89" type="text" maxlength="1"></td>
+                </tr>
+                <tr class="row">
+                        <td class="cell"><input class="box-hl-light" id="91" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="92" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="93" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="94" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="95" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl" id="96" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="97" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="98" type="text" maxlength="1"></td>
+                        <td class="cell"><input class="box-hl-light" id="99" type="text" maxlength="1"></td>
+                </tr>
+                <!--
+                <tr class="noborder" style="font-size:30px;">
+                    <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+                </tr>
+                -->
+            </table>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script type="text/javascript">
+                var sudokuArray = [
+                        [5,3,null,null,7,null,null,null,null],//[5,3, , ,7, , , , ]
+                        [6,null,null,1,9,5,null,null,null],
+                        [null,9,8,null,null,null,null,6,null],
+                        [8,null,null,null,6,null,null,null,3],
+                        [4,null,null,8,null,3,null,null,1],
+                        [7,null,null,null,2,null,null,null,6],
+                        [null,6,null,null,null,null,2,8,null],
+                        [null,null,null,4,1,9,null,null,5],
+                        [null,null,null,null,8,null,null,7,9]
+                ];
+                /*var sudokuArray = [
+                        [5,3,4,6,7,8,9,1,2],
+                        [6,7,2,1,9,5,3,4,8],
+                        [1,9,8,3,4,2,5,6,7],
+                        [8,5,9,7,6,1,4,2,3],
+                        [4,2,6,8,5,3,7,9,1],
+                        [7,1,3,9,2,4,null,5,6],
+                        [9,6,1,5,3,7,2,8,4],
+                        [2,8,7,4,1,9,6,3,5],
+                        [3,4,5,2,8,6,1,7,9]
+                ];*/
+
+                for(var i=0;i<9;i++){
+                    for(var j=0;j<9;j++){
+                        tempID = document.getElementById((i+1).toString()+(j+1).toString());
+                        tempID.value = sudokuArray[i][j];
+                        if(sudokuArray[i][j]!=null){
+                            tempID.disabled = true;
+                            tempID.style.color = "black";
+                        }
+                    }
+                }
+
+                var sudokuSolArray = [
+                        [5,3,4,6,7,8,9,1,2],
+                        [6,7,2,1,9,5,3,4,8],
+                        [1,9,8,3,4,2,5,6,7],
+                        [8,5,9,7,6,1,4,2,3],
+                        [4,2,6,8,5,3,7,9,1],
+                        [7,1,3,9,2,4,8,5,6],
+                        [9,6,1,5,3,7,2,8,4],
+                        [2,8,7,4,1,9,6,3,5],
+                        [3,4,5,2,8,6,1,7,9]
+                ];
+
+                $('input[type="text"]').on('input', function cellChecker() {
+                    this.value = this.value.replace(/[^1-9]/g,'');
+                    var s = this.id;
+                    var i = parseInt(s[0]);
+                    var j = parseInt(s[1]);
+                    if(this.value==sudokuSolArray[i-1][j-1]){
+                        sudokuArray[i-1][j-1]=sudokuSolArray[i-1][j-1];
+                        this.disabled = true;
+                        this.style.color = "black";
+                        if(this.className=="box-hl-light"){
+                            this.style.backgroundColor = "white";
+                        }
+                        else{
+                            this.style.backgroundColor = "rgb(177,176,176)";
+                        }
+
+                        var flag=0;
+                        for(var i=0;i<9;i++)
+                            for(var j=0;j<9;j++)
+                                if(sudokuArray[i][j]==null){
+                                    flag=1;
+                                    break;
+                                }
+                        if(flag==0){
+                            setTimeout(function(){ alert("Congratulations! You solved it.\nHip Hip Hurray!"); }, 0);
+                        }
+                    }
+                    else
+                        if(this.value>=1 && this.value<=9)
+                            this.style.backgroundColor = "red";
+                });
+
+            </script>
+    </body>
+</html>
