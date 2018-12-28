@@ -1,0 +1,84 @@
+    body{
+        background-image: url("space.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    @-webkit-keyframes neon2 {
+        from {
+            text-shadow: 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+        }
+        to {
+            text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+        }   
+    }
+    h1{
+        color:cornflowerblue;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        -webkit-animation: neon2 1.6s ease-in-out infinite alternate;
+        animation: neon2 1.6s ease-in-out infinite alternate; 
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+        color: white;
+    }
+    #SudoGrid {
+        width: 378px;
+        height: 395px;
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cell input{
+        display: inline-block;
+        float: left;
+        border: 0px solid;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        font-size: 30px; 
+    }
+    .cell input:focus{
+        outline: 3px solid blue;
+    }
+    .box-hl{
+        /*background-color:rgb(9, 196, 243);*/
+        background-color:rgb(177, 176, 176);
+    }
+    .box-hl-light{
+        /*background-color: rgb(142, 210, 255);*/
+        background-color:white;
+    }
+    td {
+        height:30px;
+        width:30px;
+        border:1px solid #222222;
+        text-align:center;
+    }
+    td:first-child {
+        border-left:solid;
+    }
+    td:nth-child(3n) {
+        border-right:solid ;
+    }
+    tr:first-child {
+        border-top:solid;
+    }
+    tr:nth-child(3n) td {
+        border-bottom:solid;
+    }
+    tr.noborder td{
+        border: 1px solid rgb(73, 73, 73);
+    }
+    /* #strt{
+        color: white;
+        text-shadow: 0px 0px 0px black;
+        text-align: center;
+        margin:4px auto; 
+        display:block;
+        border-radius: 15px;
+        background: #73AD21;
+        width: 70px;
+        height: 33px; 
+    } */
