@@ -69,8 +69,24 @@
                     }
             if(flag==0){
                 setTimeout(function(){ 
-                    alert("Congratulations! You solved it.\nHip Hip Hurray!");
-                    setTimeout(function(){window.open("New-Year.html","_self",);},500);
+                    clearInterval(myTime);
+                    var modal = document.getElementById('myModal');
+                    var span = document.getElementsByClassName("close")[0];
+                    var btn = document.getElementById('continue');
+                    modal.style.display = "flex";
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    btn.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                    //alert("Congratulations! You solved it.\nHip Hip Hurray!");
+                    //setTimeout(function(){window.open("New-Year.html","_self",);},500);
                 }, 1000);
             }
         }
@@ -82,7 +98,7 @@
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
     var totalSeconds = 0;
-    setInterval(setTime, 1000);
+    var myTime = setInterval(setTime,1000);
 
     function setTime() {
         ++totalSeconds;

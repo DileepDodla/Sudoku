@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
         <title>Sudoku</title>
         <link href="Style.css" rel="stylesheet" type="text/css">
     </head>
@@ -113,6 +114,24 @@
                 </tr>
                 -->
             </table>
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <div class="sub">
+                          SUDOKU
+                  </div>
+                  <span class="close">&times;</span>
+                  <br/>
+                  <p>
+                    <h3 style="display: inline">Congratulations!</h3>
+                    <br>You solved it.<br>
+                    Hip Hip Hurray!
+                  </p>
+                  <input type="button" id="continue" value="Continue"/>
+                </div>
+              
+              </div>
             <!-- <input id="strt" type="button" value="Start"> -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script type="text/javascript" src="sudokuSolver.js"></script>
